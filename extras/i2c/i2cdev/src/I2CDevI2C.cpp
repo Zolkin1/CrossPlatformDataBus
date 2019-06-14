@@ -40,12 +40,14 @@ uint8_t cpi2c_open(uint8_t address, uint8_t bus)
     int fd = open(fname, O_RDWR);
     if (fd < 0) {
         fprintf(stderr, "Unable to open %s\n", fname);
+        printf("%s\n", "Could not open file" );
         exit(1);
     }
 
     // Attempt to make this device an I2C slave
     if (ioctl(fd, I2C_SLAVE, address) < 0) {
         fprintf(stderr, "ioctl failed on %s\n", fname);
+        printf("%s\n", "Could not make slave" );
         exit(1);
     }
 
