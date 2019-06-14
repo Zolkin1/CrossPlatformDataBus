@@ -66,7 +66,7 @@ bool cpi2c_writeRegister(uint8_t address, uint8_t subAddress, uint8_t data)
 
 void cpi2c_readRegisters(uint8_t address, uint8_t subAddress, uint8_t count, uint8_t * dest)
 {
-//    i2c_smbus_write_byte(address, subAddress);
+    i2c_smbus_write_byte(address, subAddress);
 
     for (uint8_t k=0; k<count; ++k) {
         dest[k] = i2c_smbus_read_byte(address);

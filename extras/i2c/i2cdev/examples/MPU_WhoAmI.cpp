@@ -21,7 +21,7 @@
 #include "CrossPlatformI2C.h"
 #include <stdio.h>
 
-static const uint8_t  MPU_ADDRESS = 0x68;
+static const uint8_t  MPU_ADDRESS = 0x69;
 static const uint8_t  MPU_WHOAMI  = 0x75;
 
 static uint8_t device;
@@ -30,7 +30,7 @@ extern void delay(uint32_t msec);
  
 void setup()
 {
-    device = cpi2c_open(MPU_ADDRESS, 0);
+    device = cpi2c_open(MPU_ADDRESS, 1);
     printf("%i\n", device);
     delay(100);
 }
