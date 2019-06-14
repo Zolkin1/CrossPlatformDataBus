@@ -16,15 +16,21 @@
    along with CrossPlatformI2C.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "CrossPlatformI2C.h"
+//#include "CrossPlatformI2C.h"
 
-#include <linux/i2c-dev.h>
+//#include <linux/i2c-dev.h>
+//#include <i2c/smbus.h>
+extern "C" {
+    #include <linux/i2c-dev.h>
+    #include <i2c/smbus.h>
+}
 #include <sys/ioctl.h>
 #include <string.h>
 #include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 uint8_t cpi2c_open(uint8_t address, uint8_t bus)
 {
