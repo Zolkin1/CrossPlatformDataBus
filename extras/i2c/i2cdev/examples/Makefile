@@ -26,14 +26,14 @@ SRC = ../src
 all: $(ALL)
 
 MPU_WhoAmI: MPU_WhoAmI.o I2CDevI2C.o main.o
-	g++ -std=c++11 -o MPU_WhoAmI MPU_WhoAmI.o I2CDevI2C.o main.o -l i2c
+	g++ -std=c++11 -o MPU_WhoAmI MPU_WhoAmI.o I2CDevI2C.o main.o 
 
 
 MPU_WhoAmI.o: MPU_WhoAmI.cpp 
-	g++ -std=c++11 -Wall -I$(SRC) -I$(INC) -c MPU_WhoAmI.cpp
+	g++ -std=c++11 -Wall -I $(SRC) -I $(INC) -c MPU_WhoAmI.cpp
 
 I2CDevI2C.o: $(SRC)/I2CDevI2C.cpp 
-	g++ -std=c++11 -Wall -I$(SRC) -I$(INC) -c $(SRC)/I2CDevI2C.cpp
+	g++ -std=c++11 -Wall -I $(SRC) -I $(INC) -c $(SRC)/I2CDevI2C.cpp
 
 main.o: main.cpp 
 	g++ -std=c++11 -Wall -c main.cpp
