@@ -20,10 +20,12 @@
 
 //#include <linux/i2c-dev.h>
 //#include <i2c/smbus.h>
-extern "C" {
+/*extern "C" {
     #include <linux/i2c-dev.h>
-//    #include <i2c/smbus.h>
-}
+    #include <i2c/smbus.h> //Needed to develop on local computer
+}*/
+#include <linux/i2c-dev.h>
+#include <i2c/smbus.h> //Needed to develop on local computer
 #include <sys/ioctl.h>
 #include <string.h>
 #include <stdio.h>
